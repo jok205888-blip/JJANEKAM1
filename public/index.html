@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JJANEKAM | Ерлер киімі дүкені</title>
+  <meta name="description" content="Сапалы ерлер киімі для вашего дома. Диваны, кресла, столы, шкафы и многое другое.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="#" class="logo">JJANEKAM</a>
+      <nav class="nav">
+        <a href="#catalog" class="nav-link">Каталог</a>
+        <a href="#categories" class="nav-link">Санаттар</a>
+        <a href="#about" class="nav-link">О нас</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <button class="icon-btn favorites-btn" id="favoritesBtn" aria-label="Избранное">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+          <span class="favorites-count" id="favoritesCount">0</span>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8" cy="21" r="1"></circle>
+            <circle cx="19" cy="21" r="1"></circle>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn" id="accountBtn" aria-label="Личный кабинет">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#catalog" class="mobile-nav-link">Каталог</a>
+      <a href="#categories" class="mobile-nav-link">Санаттар</a>
+      <a href="#about" class="mobile-nav-link">О нас</a>
+      <a href="#contacts" class="mobile-nav-link">Контакты</a>
+    </nav>
+    <!-- Search Bar -->
+    <div class="search-bar" id="searchBar">
+      <div class="container search-bar-inner">
+        <svg class="search-bar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Поиск мебели..." autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Закрыть поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://avatars.mds.yandex.net/i?id=0c84cbd311a71ca598ac295d72469e13_l-4569521-images-thumbs&n=13" alt="Современный интерьер" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <span class="hero-tag">Жаңа топтама 2026</span>
+      <h1 class="hero-title">JJANEKAM<br>Ерлер киімі</h1>
+      <p class="hero-text">Сапалы ерлер киімі от лучших производителей. Современный дизайн, высокое качество и доступные цены.</p>
+      <div class="hero-buttons">
+        <a href="#catalog" class="btn btn-primary">Каталог көру</a>
+        <a href="#about" class="btn btn-secondary">Біз туралы</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"></path>
+              <path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"></path>
+              <circle cx="7" cy="18" r="2"></circle>
+              <path d="M15 18H9"></path>
+              <circle cx="17" cy="18" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="feature-title">Бесплатная доставка</h3>
+          <p class="feature-text">При заказе от 20 000₸</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Гарантия одежды</h3>
+          <p class="feature-text">На всю продукцию</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Поддержка 24/7</h3>
+          <p class="feature-text">Всегда на связи</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+              <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
+              <path d="M12 3v6"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Возврат</h3>
+          <p class="feature-text">Без вопросов</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Санаттар</h2>
+        <p class="section-subtitle">Біз ұсынатын киімдер</p>
+      </div>
+      <div class="categories-grid">
+        <a href="#catalog" class="category-card" data-category="sofas">
+          <img src="https://a.lmcdn.ru/product/X/D/XD001XM01JSU_33200546_1_v2.jpg" alt="Футболка" class="category-img">
+          <div class="category-overlay">
+            <h3 class="category-title">Футболка</h3>
+            <span class="category-count"></span>
+          </div>
+        </a>
+        <a href="#catalog" class="category-card" data-category="chairs">
+          <img src="https://avatars.mds.yandex.net/get-mpic/4255269/2a0000018e055f9ec841165cb42951f41447/orig" alt="Двойка" class="category-img">
+          <div class="category-overlay">
+            <h3 class="category-title">Двойка</h3>
+            <span class="category-count"></span>
+          </div>
+        </a>
+        <a href="#catalog" class="category-card" data-category="tables">
+          <img src="https://img.ltwebstatic.com/images3_pi/2022/05/27/16536169330dca72afd2f6ed1ce267b097473b5637_thumbnail_405x552.jpg" alt="Аяк киім" class="category-img">
+          <div class="category-overlay">
+            <h3 class="category-title">Аяк киім</h3>
+            <span class="category-count"></span>
+          </div>
+        </a>
+        <a href="#catalog" class="category-card" data-category="wardrobes">
+          <img src="https://ir.ozone.ru/s3/multimedia-1-j/7442027551.jpg" alt="брюки" class="category-img">
+          <div class="category-overlay">
+            <h3 class="category-title">брюки</h3>
+            <span class="category-count"></span>
+          </div>
+        </a>
+        <a href="#catalog" class="category-card" data-category="beds">
+          <img src="https://cdnru.4stand.com/list2x/61/a6/61a64bc94872151feed462267ff15899d26b74b3.webp" alt="Кепки" class="category-img">
+          <div class="category-overlay">
+            <h3 class="category-title">Кепки</h3>
+            <span class="category-count"></span>
+          </div>
+        </a>
+        <a href="#catalog" class="category-card" data-category="decor">
+          <img src="https://img.grouponcdn.com/seocms/WA2nKaArPM7kGhsLZ5ahHpr4sR1/nine-cool-gift-ideas-for-men_inline-image_jpg-600x390" alt="Декор" class="category-img">
+          <div class="category-overlay">
+            <h3 class="category-title">Аксессуары</h3>
+            <span class="category-count"></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Киімдер каталогы</h2>
+        <p class="section-subtitle">Выберите мебель для вашего интерьера</p>
+      </div>
+      
+      <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="sofas">Футболка</button>
+        <button class="filter-btn" data-filter="chairs">Двойка</button>
+        <button class="filter-btn" data-filter="tables">Аяк киім</button>
+        <button class="filter-btn" data-filter="wardrobes">брюки</button>
+        <button class="filter-btn" data-filter="beds">Кепки</button>
+        <button class="filter-btn" data-filter="decor">Аксессуары</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be inserted by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Recently Viewed -->
+  <section class="recently-viewed" id="recentlyViewed" style="display: none;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Вы недавно смотрели</h2>
+        <p class="section-subtitle">История просмотренных товаров</p>
+      </div>
+      <div class="recently-viewed-grid" id="recentlyViewedGrid">
+        <!-- Recently viewed products inserted by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container about-content">
+      <div class="about-image">
+        <img src="https://star-tex.ru/media/attachments/file_49cxHLl.jpg" alt="Наш шоурум">
+      </div>
+      <div class="about-text">
+        <span class="about-tag">Біз туралы</span>
+        <h2 class="about-title">Модная одежда для мужчин — от базовых вещей до стильных образов на каждый день.</h2>
+        <p class="about-description">Мы — современный магазин одежды, который помогает каждому клиенту выглядеть уверенно, стильно и актуально. У нас собраны лучшие модели для мужчин и женщин: от повседневной одежды до ярких образов для особых случаев</p>
+        <p class="about-description">Мы тщательно отбираем каждую вещь, следим за качеством и модными тенденциями, чтобы вы получали только то, что действительно стоит вашего внимания.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">лет на рынке</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50K+</span>
+            <span class="stat-label">довольных клиентов</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">брендов</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Footer -->
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="footer-logo">JJANEKAM</a>
+          <p class="footer-about">Сапалы ерлер киімі для создания уютного и стильного интерьера вашего дома.</p>
+          <div class="social-links">
+            
+            <a href="https://www.instagram.com/billion.co.karaganda" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Информация</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Біз туралы</a></li>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">Гарантия</a></li>
+            <li><a href="#">Возврат товара</a></li>
+            <li><a href="#">Политика конфиденциальности</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Контакты</h4>
+          <ul class="footer-contacts">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+77064127052">8 (708) 745-01-79</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <a href="mailto:info@mebel.ru">info@mebel.ru</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>г. Караганда, Проспект Республики, 42</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p> 2024 JJANEKAM. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Корзина</h2>
+      <button class="cart-close" id="cartClose" aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be inserted by JavaScript -->
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span>Итого:</span>
+        <span id="cartTotal">0 ₸</span>
+      </div>
+      <button class="btn btn-primary btn-block">Оформить заказ</button>
+    </div>
+  </aside>
+
+  <!-- Favorites Sidebar -->
+  <div class="cart-overlay" id="favoritesOverlay"></div>
+  <aside class="cart-sidebar" id="favoritesSidebar">
+    <div class="cart-header">
+      <h2 class="cart-title">Избранное</h2>
+      <button class="cart-close" id="favoritesClose" aria-label="Закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="favoritesItems">
+      <!-- Favorites items will be inserted by JavaScript -->
+    </div>
+  </aside>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="product-modal" id="productModal">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+    <div class="modal-content" id="modalContent">
+      <!-- Modal content inserted by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Auth Modal -->
+  <div class="modal-overlay" id="authOverlay"></div>
+  <div class="auth-modal" id="authModal">
+    <button class="modal-close" id="authClose" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLogin">Вход</button>
+      <button class="auth-tab" id="tabRegister">Регистрация</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form active" id="loginForm">
+      <h2 class="auth-title">С возвращением</h2>
+      <p class="auth-subtitle">Войдите в свой аккаунт</p>
+      <div class="auth-field">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+      </div>
+      <div class="auth-field">
+        <label for="loginPassword">Пароль</label>
+        <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+      </div>
+      <button type="submit" class="btn btn-primary auth-submit">Войти</button>
+    </form>
+
+    <!-- Register Form -->
+    <form class="auth-form" id="registerForm">
+      <h2 class="auth-title">Создать аккаунт</h2>
+      <p class="auth-subtitle">Зарегистрируйтесь, чтобы начать покупки</p>
+      <div class="auth-field">
+        <label for="regName">Имя</label>
+        <input type="text" id="regName" placeholder="Ваше имя" required>
+      </div>
+      <div class="auth-field">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="example@mail.com" required>
+      </div>
+      <div class="auth-field">
+        <label for="regPassword">Пароль</label>
+        <input type="password" id="regPassword" placeholder="Минимум 6 символов" minlength="6" required>
+      </div>
+      <button type="submit" class="btn btn-primary auth-submit">Зарегистрироваться</button>
+    </form>
+
+    <!-- Logged In View -->
+    <div class="auth-profile" id="authProfile">
+      <div class="auth-avatar" id="authAvatar">А</div>
+      <h2 class="auth-title" id="authProfileName">Имя пользователя</h2>
+      <p class="auth-subtitle" id="authProfileEmail">email@mail.com</p>
+      <button class="btn btn-secondary auth-submit" id="logoutBtn">Выйти</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span id="toastMessage">Товар добавлен в корзину</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
